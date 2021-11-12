@@ -8,7 +8,7 @@ const ManageOrders = () => {
 	const { user } = useFirebase();
 	useEffect(() => {
 		if (user.email) {
-			fetch('https://tranquil-sierra-50909.herokuapp.com/orders')
+			fetch('https://nameless-stream-92259.herokuapp.com/orders')
 				.then((res) => res.json())
 				.then((data) => {
 					console.log(data);
@@ -24,7 +24,7 @@ const ManageOrders = () => {
 	const handleDeleteOrder = (id) => {
 		const proceed = window.confirm('are u sure');
 		if (proceed) {
-			const url = `https://tranquil-sierra-50909.herokuapp.com/order/${id}`;
+			const url = `https://nameless-stream-92259.herokuapp.com/order/${id}`;
 			fetch(url, {
 				method: 'DELETE',
 			})
