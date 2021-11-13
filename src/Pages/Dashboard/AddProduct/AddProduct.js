@@ -19,8 +19,8 @@ const AddProduct = () => {
 	};
 	return (
 		<div className='add-service'>
-			<h2>Add Product</h2>
-			<form onSubmit={handleSubmit(onSubmit)}>
+			<h2 className='bg-info p-4 text-dark'>Add Product</h2>
+			<form className='bg-light p-4' onSubmit={handleSubmit(onSubmit)}>
 				<input
 					{...register('name', { required: true, maxLength: 20 })}
 					placeholder='name'
@@ -30,13 +30,13 @@ const AddProduct = () => {
 					{...register('Amount')}
 					placeholder='Amount'
 				/>
-				{/* <input {...register('time')} placeholder='time' /> */}
 				<textarea
 					{...register('description')}
 					placeholder='description'
 				/>
 				<input {...register('img')} placeholder='img-url' />
-				<input type='submit' />
+
+				<input className='bg-danger text-light' type='submit' />
 			</form>
 		</div>
 	);

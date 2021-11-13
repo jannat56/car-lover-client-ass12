@@ -37,22 +37,11 @@ const Header = () => {
 							about
 						</Nav.Link>
 						<Nav.Link as={HashLink} to='/home#services'>
-							Services
+							Products
 						</Nav.Link>
-						{/* <Nav.Link as={HashLink} to='/home#facilities'>
-							Facilities
-						</Nav.Link> */}
 						<div>
 							{user.email && (
 								<span className=''>
-									{/* <Link to='/addServices'>Add Service</Link>
-									<br /> */}
-									{/* <Link to='/manageOrders'>
-										Manage Orders
-									</Link>
-									<br /> */}
-									{/* <Link to='/myOrders'>My Orders</Link>
-									<br /> */}
 									<Link to='/dashboard'>Dashboard</Link>
 								</span>
 							)}

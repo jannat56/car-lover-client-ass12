@@ -41,7 +41,7 @@ const ManageOrders = () => {
 		}
 	};
 	return (
-		<div>
+		<div className='bg-info text-dark p-4'>
 			<h2>Orders : {allOrders.length}</h2>
 			<ul>
 				{allOrders &&

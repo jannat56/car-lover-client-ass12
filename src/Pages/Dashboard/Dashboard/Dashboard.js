@@ -3,19 +3,8 @@ import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-// import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
-// import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
-// import Typography from '@mui/material/Typography';
-// import Bookings from '../Bookings/Bookings';
+
 import {
 	BrowserRouter as Router,
 	Switch,
@@ -24,7 +13,7 @@ import {
 	useParams,
 	useRouteMatch,
 } from 'react-router-dom';
-import { Button, Typography } from '@mui/material';
+import { Button, Drawer, Typography } from '@mui/material';
 import { Topic } from '@mui/icons-material';
 import DashboardHome from '../DashboardHome/DashboardHome';
 
@@ -47,9 +36,9 @@ function Dashboard(props) {
 	};
 
 	const drawer = (
-		<div>
+		<div className='bg-dark'>
 			<Toolbar />
-			<Divider />
+			{/* <Divider /> */}
 			{/* <Link to='/bookings'>
 				<Button color='inherit'>Booking</Button>
 			</Link> */}
@@ -69,6 +58,7 @@ function Dashboard(props) {
 			<Link to={`${url}/manageOrders`}>
 				<Button color='inherit'>Manage Orders</Button>
 			</Link>
+			{/* for admin  */}
 			{/* {admin && (
 				<Box>
 					<Link to={`${url}/makeAdmin`}>

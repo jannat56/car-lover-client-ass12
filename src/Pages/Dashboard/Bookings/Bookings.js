@@ -19,7 +19,7 @@ const Bookings = () => {
 			.then((data) => setBookings(data));
 	}, []);
 	return (
-		<div>
+		<div className='bg-info text-dark p-4'>
 			<h2>Bookings: {bookings.length}</h2>
 			<TableContainer component={Paper}>
 				<Table sx={{ minWidth: 650 }} aria-label='simple table'>

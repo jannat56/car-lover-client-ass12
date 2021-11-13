@@ -11,12 +11,12 @@ const Services = () => {
 			.then((data) => setServices(data));
 	}, []);
 	return (
-		<div className='bg-color-service p-4 mt-4'>
+		<div className='bg-color-service mt-4'>
 			<h2
 				className='mt-4 p-4 m-4 service-bg bg-info text-dark w-80'
 				id='services'
 			>
-				Our Services | Products
+				Our Products
 			</h2>
 			<h3 className='text-primary'>Buy Your Dream Car</h3>
 			<div className='service-container'>

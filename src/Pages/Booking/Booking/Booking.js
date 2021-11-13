@@ -39,7 +39,7 @@ const Booking = () => {
 			<h2>Booking: {service.name}</h2>
 			<p>{service.description}</p>
 			<h2>$ {service.Amount}</h2>
-			{/* <h3>{serviceId}</h3> */}
+
 			<img
 				style={{ height: '300px', width: '300px' }}
 				alt='service'

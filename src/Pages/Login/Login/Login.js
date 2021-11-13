@@ -16,8 +16,8 @@ const Login = () => {
 		<div className='' id='login'>
 			<h1 className='p-4 expert-card text-primary'>Please Login</h1>
 			<h4 className='text-primary'>
-				You have to login first and then You can choose any service to
-				continue. So login first, Be Healthy
+				You have to login first and then You can choose any Product to
+				Order. So login first. We Provide Best Produts.
 			</h4>
 			<Form className=' form bg-light padding-form '>
 				<Form.Group
