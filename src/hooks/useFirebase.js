@@ -35,10 +35,11 @@ const useFirebase = () => {
 		createUserWithEmailAndPassword(auth, email, password)
 			.then((res) => {
 				// setUser(res.user);
-				const newUser = { email, displayName: email };
-				setUser(newUser);
+				const newUser = res.user;
+				const { email } = newUser;
+				// setUser(newUser);
 				// save user to the database
-				saveUser(email, email, 'POST');
+				saveUser(email, 'POST');
 				console.log('signup');
 			})
 			.catch((error) => setError(error.message));
@@ -47,7 +48,7 @@ const useFirebase = () => {
 	const loginUsingEmail = (email, password) => {
 		signInWithEmailAndPassword(auth, email, password)
 			.then((res) => {
-				setUser(res.user);
+				// setUser(res.user);
 				console.log('signin');
 			})
 			.catch((error) => setError(error.message));
@@ -94,8 +95,8 @@ const useFirebase = () => {
 			.finally(() => setIsLoading(false));
 	};
 
-	const saveUser = (email, displayName, method) => {
-		const user = { email, displayName };
+	const saveUser = (email, method) => {
+		const user = { email };
 		fetch('https://nameless-stream-92259.herokuapp.com/users', {
 			method: method,
 			headers: {

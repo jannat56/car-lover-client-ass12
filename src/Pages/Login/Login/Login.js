@@ -1,5 +1,5 @@
 import Button from '@restart/ui/esm/Button';
-import React from 'react';
+import React, { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { Col, Form, Row } from 'react-bootstrap';
 import { useLocation } from 'react-router';
@@ -9,8 +9,9 @@ import './Login.css';
 
 const Login = () => {
 	const location = useLocation();
-	const { signInUsingGoogle } = useAuth();
-	const { loginUsingEmail } = useAuth();
+	const emailRef = useRef('');
+	const passwordRef = useRef('');
+	const { signInUsingGoogle, loginUsingEmail } = useAuth();
 
 	return (
 		<div className='' id='login'>
@@ -29,7 +30,11 @@ const Login = () => {
 						email
 					</Form.Label>
 					<Col sm='10'>
-						<Form.Control type='email' placeholder='email' />
+						<Form.Control
+							ref={emailRef}
+							type='email'
+							placeholder='email'
+						/>
 					</Col>
 				</Form.Group>
 
@@ -42,10 +47,22 @@ const Login = () => {
 						Password
 					</Form.Label>
 					<Col sm='10'>
-						<Form.Control type='password' placeholder='Password' />
+						<Form.Control
+							ref={passwordRef}
+							type='password'
+							placeholder='Password'
+						/>
 					</Col>
 				</Form.Group>
-				<Button onClick={loginUsingEmail} className='btn btn-info mb-2'>
+				<Button
+					onClick={() =>
+						loginUsingEmail(
+							emailRef.current.value,
+							passwordRef.current.value
+						)
+					}
+					className='btn btn-info mb-2'
+				>
 					Login In
 				</Button>
 				<br />

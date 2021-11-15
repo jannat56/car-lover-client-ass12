@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 // import Services from './Services/Services';
 import Service from './Service/Service';
+import ShowReviews from '../ShowReviews/ShowReviews';
 
 const Home = () => {
 	const [services, setService] = useState([]);
@@ -40,6 +41,7 @@ const Home = () => {
 				</div>
 			</div>
 			<About></About>
+			<ShowReviews></ShowReviews>
 		</div>
 	);
 };
